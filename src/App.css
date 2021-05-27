@@ -1,38 +1,738 @@
-.App {
-  text-align: center;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  width: 1536px;
+  height: 762px;
+  background: url("./img/main/main-wallpaper.jpg") fixed center;
+  background-size: cover;
+}
+*{
+  box-sizing: border-box;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+.row {
+  display: flex;
+}
+.d-flex {
+  display: flex;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.justify-content-end {
+  justify-content: end;
+}
+.h-100 {
+  height: 100%;
+}
+.col-lg-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+/*-- Navbar --*/
+.nav-panel {
+  position: fixed;
+  width: 100%;
+  height: 25px;
+  left: 0;
+  top: 0;
+  background: linear-gradient(90.02deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.01) 100%);
+  mix-blend-mode: normal;
+  -webkit-backdrop-filter: saturate(100%) blur(50px);
+  backdrop-filter: saturate(100%) blur(50px);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav-container {
+  position: absolute;
+  width: 96.7%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 25px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/*-- Top Left Bar --*/
+
+.apple {
+  width: 382px;
+  height: 25px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.applebtn {
+  width: 40px;
+  height: 25px;
+  background: url("./img/navbar/apple.svg") no-repeat center;
+}
+
+.applebtn:hover {
+  background-color: #1e75e7;
+  cursor: pointer;
+}
+
+/* Apple Dropdown */
+.apple-content {
+  display: none;
+  position: absolute;
+  width: 250px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(100px);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  border-radius: 0 0 10px 10px;
+  z-index: 1;
+  top: 25px
+}
+
+.apple-content p {
+  color: white;
+  padding: 15px 25px;
+  text-decoration: none;
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 0;
+  margin: 0;
+}
+
+.apple-content p:hover {background-color: #1e75e7; cursor: pointer}
+
+.apple:hover .apple-content {
+  display: block;
+}
+
+.apple-sider-con {
+  width: 350px;
+  height: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.apple-text {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 0;
+  color: #FFFFFF;
+  text-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
+  align-self: center;
+}
+
+.apple-text:hover {
+  color: #1e75e7;
+  cursor: pointer;
+}
+
+.section-border1 {
+  width: 250px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/*-- Top Right Bar --*/
+.wi-fi-con {
+  width: 309px;
+  height: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.battery-svg {
+  width: 33px;
+  height: 15px;
+  background: url("./img/navbar/battery.svg") no-repeat;
+  align-self: center;
+}
+
+.wifi-svg {
+  width: 20px;
+  height: 15px;
+  background: url("./img/navbar/wifi.svg") no-repeat;
+  align-self: center;
+}
+
+.hotspot-svg {
+  width: 14px;
+  height: 12px;
+  background: url("./img/navbar/hotspot.svg") no-repeat;
+  align-self: center;
+}
+
+.bright-svg {
+  width: 12px;
+  height: 12px;
+  background: url("./img/navbar/bright.svg") no-repeat;
+  align-self: center;
+  position: absolute;
+  top: 4px;
+  left: 5px;
+}
+.volume-svg {
+  width: 12px;
+  height: 12px;
+  background: url("./img/navbar/volume.svg") no-repeat;
+  align-self: center;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+.airvolume-svg {
+  width: 12px;
+  height: 12px;
+  background: url("./img/navbar/airvolume.svg") no-repeat;
+  align-self: center;
+}
+
+.bluetooth-svg {
+  width: 8px;
+  height: 12px;
+  background: url("./img/navbar/bluetooth.svg") no-repeat;
+  align-self: center;
+}
+
+.disturb-svg {
+  width: 20px;
+  height: 18px;
+  background: url("./img/navbar/disturb.svg") no-repeat;
+  align-self: center;
+}
+
+.search-svg {
+  width: 15px;
+  height: 15px;
+  background: url("./img/navbar/search.svg") no-repeat;
+  align-self: center;
+}
+
+.switch {
+  width: 30px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.switch:hover {
+  background: #1e75e7;
+  cursor: pointer;
+}
+
+.switch-svg {
+  width: 15px;
+  height: 15px;
+  background: url("./img/navbar/switch.svg") no-repeat;
+  align-self: center;
+}
+
+.switch-svg:hover {
+  cursor: pointer;
+}
+
+.britness-img {
+  width: 21px;
+  height: 11px;
+  background: url("./img/navbar/kbrite.svg") no-repeat;
+  align-self: center;
+}
+
+.airplay-svg {
+  width: 17px;
+  height: 15px;
+  background: url("./img/navbar/airplay.svg") no-repeat;
+  align-self: center;
+}
+
+.switch-content {
+  display: none;
+  position: absolute;
+  width: 325px;
+  height: 405px;
+  right: -15px;
+  top: 25px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(100px);
+  border-radius: 20px;
+  z-index: 2;
+}
+
+.switch-container1 {
+  width: 295px;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  margin: 15px auto;
+}
+
+.switch-container2 {
+  width: 295px;
+  height: 60px;
+  margin: 15px auto;
+  padding: 15px 0 15px 15px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+}
+
+.inner-con {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+}
+
+.second-inner {
+  width: 135px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.third-inner {
+  width: 135px;
+  height: 65px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.inner-con1 {
+  width: 145px;
+  height: 150px;
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.inner-con2 {
+  width: 135px;
+  height: 70px;
+  display: flex;
   align-items: center;
+  padding: 10px;
+}
+
+.inner-con3 {
+  width: 60px;
+  height: 65px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.switch:hover .switch-content {
+  display: block;
+}
+
+.invisible-con1 {
+  width: auto;
+  height: 30px;
+  display: flex;
+}
+
+.blue-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background: #017AFF;
+  display: flex;
+  align-content: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-right: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.circle-text-con {
+  width: auto;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.head-tex {
+  font-family: 'Poppins', sans-serif;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 0;
+  color: #070808;
+  text-align: left;
+  margin: 0;
+}
+
+.tex-bottom {
+  font-family: 'Poppins', sans-serif;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 0;
+  text-align: left;
+  color: #8C8C8D;
+  margin: 0;
+}
+
+.time {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 0;
+  color: #FFFFFF;
+  align-self: center;
+}
+
+.kbtex {
+  text-align: center;
+  font-size: 9px;
+}
+
+.br-slider {
+  width: 95%;
+  height: 17px;
+  display: flex;
+  position: relative;
+}
+.range {
+  width: 100%;
+  height: 20px;
+  -webkit-appearance: none;
+  background: #89B4CF;
+  outline: none;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid #6DA5C9;
+  margin: 0;
+}
+
+.range::-moz-range-thumb {
+  -webkit-appearance: none;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  border: none;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.25);
+}
+
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 50%;
+  background: #FFFFFF;
+  cursor: pointer;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.25);
+}
+
+.range::-moz-range-progress {
+  background-color: #FFFFFF;
+  height: 20px;
+}
+
+.airs-circle {
+  width: 24px;
+  height: 24px;
+  margin-right: 0;
+  margin-left: 10px;
+  align-self: center;
+  background: #89B4CFD0;
+}
+
+.vol-wid {
+  width: 88%;
+}
+
+/*-- Middle Screen --*/
+.screen-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 25px;
+  display: flex;
+  z-index: 1;
+}
+
+.app-img-txt-con {
+  width: auto;
+  height: 70px;
+}
+.app-column {
+  width: 126px;
+  height: 400px;
+  display: grid;
+  margin-top: 25px;
+}
+
+.center-img {
+  display: inline-block;
+}
+
+.app-txt {
+  font-family: 'Poppins', sans-serif;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 1;
+  color: #FFFFFF;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.49);
+}
+
+
+/*-- Bottom App Container --*/
+.bt-con {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  bottom: 5px;
+  z-index: 2;
+}
+
+.bottom-container {
+  width: 685px;
+  height: 75px;
+  background: rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: saturate(100%) blur(50px);
+  backdrop-filter: saturate(100%) blur(50px);
+  border-radius: 20px;
+}
+
+.bt-inner-con {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 25px;
+}
+
+.app-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  padding: 0;
+}
+
+.finder-img {
+  background: url("./img/appbar/finder.svg");
+}
+.safari-img {
+  background: url("./img/appbar/safari.svg");
+}
+.user-img {
+  background: url("./img/appbar/user.svg");
+}
+.linkedin-img {
+  background: url("./img/appbar/linkedin.svg");
+}
+.github-img {
+  background: url("./img/appbar/github.svg");
+}
+.message-img {
+  background: url("./img/appbar/message.svg");
+}
+.mail-img {
+  background: url("./img/appbar/mail.svg");
+}
+.map-img {
+  background: url("./img/appbar/maps.svg");
+}
+.appstore-img {
+  background: url("./img/appbar/appstore.svg");
+}
+.settings-img {
+  background: url("./img/appbar/settings.svg");
+}
+.recyclebin-img {
+  background: url("./img/appbar/emprecycle.svg");
+}
+
+.section-border {
+  height: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+/*----------------------------------------------------
+                 About Kshitij
+------------------------------------------------------*/
+.about-container {
+  display: none;
+  width: 876px;
+  height: 500px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  z-index: 3;
+  position: absolute;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.taskbar-container {
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  left: 0;
+  top: 0;
+  background: #FFFFFF;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  align-items: center;
+  z-index: 4;
+}
+.close-bar {
+  position: absolute;
+  width: 56px;
+  height: auto;
+  left: 30px;
+  justify-content: space-between;
+  display: flex;
+  z-index: 6;
+}
+.closebar-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
+}
+.close-button {
+  background: #FB675C;
+}
+.close-button:hover .close-svg {
+  background: url("components/img/extra/close.svg") no-repeat;
+  width: 10px;
+    position: absolute;
+    height: 10px;
+    left: 7%;
+    top: 30%;
+}
+.minimize-button {
+  background: #FECB25;
+}
+.minimize-button:hover .minimize-svg {
+  background: url("components/img/extra/minimize.svg") no-repeat;
+  width: 10px;
+    position: absolute;
+    height: 10px;
+    left: 45%;
+    top: 50%;
+}
+.maxmize-button {
+  background: #09cf52;
+}
+.maxmize-button:disabled, .maxmize-button:disabled .maximize-svg {
+  opacity: 0.3;
+  cursor: auto;
+}
+.maxmize-button:hover .maximize-svg {
+  background: url("components/img/extra/maximize.svg") no-repeat;
+  width: 10px;
+    position: absolute;
+    height: 10px;
+    left: 82%;
+    top: 18%;
+}
+.about-menu-container {
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  justify-content: center;
+  z-index: 5;
+}
+.about-menu-text{
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #8E8E8E;
+}
+.copyright-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.copyright {
+  font-family: 'Poppins', sans-serif;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 0;
+  letter-spacing: 0.02em;
+  color: #B8B8B8;
+  text-align: center;
+}
+.about-main-container {
+  width: 100%;
+  height: 88%;
+  position: absolute;
+  top: 30px;
+}
+.about-image-container {
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 44.06%, rgba(251, 200, 123, 0.5) 100%);
+  box-shadow: 0 4px 3px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+}
+.about-image {
+  width: 223px;
+  height: 223px;
+  background: url("./components/img/extra/abou-image.jpg");
+  border-radius: 50%;
+}
+.about-txt-con {
+  width: auto;
+  height: auto;
+}
+.kshitij-name {
+  font-family: 'Poppins', sans-serif;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 0;
+  letter-spacing: 0.02em;
+  color: #000000;
+}
+.kshitij-position {
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 0;
+  letter-spacing: 0.02em;
+  color: rgba(0, 0, 0, 0.85);
+  padding-bottom: 10px;
+}
+.kshitij-summary {
+  width: 85%;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 25px;
+  letter-spacing: 0.02em;
+  color: rgba(0, 0, 0, 0.7);
+}
+.button-con {
+  width: 45%;
+  justify-content: space-between;
+}
+.about-buttons {
+  padding: 2px 15px;
+  background: #FFFFFF;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 25px;
+  color: rgba(0, 0, 0, 0.85);
 }
