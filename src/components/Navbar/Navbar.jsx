@@ -3,6 +3,7 @@ import React from 'react';
 function Navbar() {
     function aboutkshitij() {
         document.querySelector('.about-container').style.display = "block";
+
     }
     return (
         <>
