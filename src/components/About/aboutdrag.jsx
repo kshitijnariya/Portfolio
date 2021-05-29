@@ -2,6 +2,7 @@ import React from 'react';
 import Draggable from "react-draggable";
 import ReactDOM from "react-dom";
 import * as ReactGA from "react-ga";
+import { Project } from "./project";
 
 
 class Aboutdrag extends React.Component {
@@ -136,7 +137,7 @@ function About1() {
                                 work in a challenging environment to prove my coding skills and utilize my knowledge of
                                 various databases for the growth of the organization. </p>
                             <div className="d-flex button-con">
-                                <button className="about-buttons center">Resume</button>
+                                <a href="https://drive.google.com/file/d/13SPSdqKGlmhv5r01ZREF9Xgn22hpPx2X/view?usp=sharing" target="_blank" className="about-buttons center">Resume</a>
                                 <button className="about-buttons center">Contact</button>
                             </div>
                         </div>
@@ -225,7 +226,9 @@ function Projects() {
     return (
         <>
             <div id="projects" className="h-100">
-
+                <div className="project-container">
+                    <Project />
+                </div>
             </div>
         </>
     )
@@ -234,7 +237,36 @@ function Skills() {
     return (
         <>
             <div id="skills" className="h-100">
-
+                <ul className="text-align-center skill mt-lg-3">
+                    <li>My areas of expertise are <strong className="apple-blue">Front-end development, UI Designing & React.js!</strong></li>
+                    <li>I actively learn new things based on my projects.</li>
+                </ul>
+                <div className="w-80 m-auto mt-lg-3 d-flex">
+                    <div className="col-lg-6 text-align-center">
+                        <ul className="skill"><li><b>Language & Libraries</b></li></ul>
+                        <div className="d-flex flex-wrap justify-content-center items-start m-auto w-20">
+                            <img className="m-1" src="https://img.shields.io/badge/-JavaScript-%23F7DF1C?style=flat&logo=javascript&logoColor=000000&labelColor=%23F7DF1C&color=%23FFCE5A" alt="javascript" />
+                            <img className="m-1" src="https://img.shields.io/badge/C%2B%2B-00599C?style=flat&logo=c%2B%2B&logoColor=white" alt="c++" />
+                            <img className="m-1" src="https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=ffffff" alt="python" />
+                            <img className="m-1" src="https://img.shields.io/badge/Kotlin-0175C2?style=flat&logo=kotlin&logoColor=white" alt="kotlin" />
+                            <img className="m-1" src="https://img.shields.io/badge/-HTML5-%23E44D27?style=flat&logo=html5&logoColor=ffffff" alt="HTML" />
+                            <img src="https://img.shields.io/badge/Java-%23CC6699?style=flat&logo=java&logoColor=ffffff" alt="java" className="m-1" />
+                            <img src="https://img.shields.io/badge/jQuery-0769AD?style=flat&logo=jquery&logoColor=white" alt="jquery" className="m-1" />
+                        </div>
+                    </div>
+                    <div className="col-lg-6 text-align-center">
+                        <ul className="skill"><li><b>Framework & Tools</b></li></ul>
+                        <div className="d-flex flex-wrap justify-content-center items-start m-auto w-20">
+                            <img className=" m-1" src="https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=ffffff" alt="react" />
+                            <img className="m-1" src="https://img.shields.io/badge/Django-38B2AC?style=flat&logo=django-css&logoColor=white" alt="Django" />
+                            <img className="m-1" src="https://img.shields.io/badge/React Native-02569B?style=flat&logo=react&logoColor=white" alt="react native" />
+                            <img src="https://img.shields.io/badge/-Google Cloud-339933?style=flat&logo=google&logoColor=ffffff" alt="Cloud" className="m-1" />
+                            <img src="https://img.shields.io/badge/-Git-%23F05032?style=flat&logo=git&logoColor=%23ffffff" alt="git" className="m-1" />
+                            <img className="m-1" src="https://img.shields.io/badge/Figma-593D88?style=flat&logo=figma&logoColor=white" alt="Figma" />
+                            <img className="m-1" src="https://img.shields.io/badge/Adobe XD-593D88?style=flat&logo=adobe&logoColor=white" alt="XD" />
+                        </div>
+                    </div>
+                </div>
             </div>
         </>
     )

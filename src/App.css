@@ -36,6 +36,16 @@ button {
   justify-content: center;
   align-items: center;
 }
+.m-1 {
+  margin: .25rem;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.items-start {
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+}
 .justify-content-end {
   justify-content: end;
 }
@@ -46,6 +56,37 @@ button {
   flex: 0 0 50%;
   max-width: 50%;
 }
+.absolute {
+  position: absolute;
+}
+.w-100 {
+  width: 100%;
+}
+.w-80 {
+  width: 80%;
+}
+.w-20 {
+  width: 20%;
+}
+.text-align-right {
+  text-align: right;
+}
+.text-align-center {
+  text-align: center;
+}
+.m-auto {
+  margin: auto;
+}
+.mt-lg-3 {
+  margin-top: 25px;
+}
+.flex-wrap {
+  flex-wrap: wrap
+}
+.apple-blue {
+  color: #3481c8;
+}
+
 /*-- Navbar --*/
 .nav-panel {
   position: fixed;
@@ -798,11 +839,11 @@ button {
 .card-position{
   font-family: 'Poppins', sans-serif;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1;
   letter-spacing: 0.02em;
   color: rgba(0, 0, 0, 0.75);
-  margin-top: 1px;
+  margin-top: 3px;
   margin-bottom: 0;
 }
 .card-extra{
@@ -843,3 +884,31 @@ button {
   list-style: disc;
   padding-left: 15px;
 }
+.project-container {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  overflow: auto;
+}
+::-webkit-scrollbar {
+  width: 17px;
+}
+::-webkit-scrollbar-thumb {
+  border: 4px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  border-radius: 9999px;
+  background-color: #DDDDDD;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #CCCCCC;
+}
+.project-box{
+  width: 85%;
+  margin: 20px auto 10px auto;
+  height: auto;
+  background: #FFFFFF;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  padding: 20px;
+}
+.skill li::before {content: "</>"; font-size: 20px; color: #db314b; margin-right: 10px}
