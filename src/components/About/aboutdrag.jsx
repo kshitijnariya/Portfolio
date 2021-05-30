@@ -3,6 +3,7 @@ import Draggable from "react-draggable";
 import ReactDOM from "react-dom";
 import * as ReactGA from "react-ga";
 import { Project } from "./project";
+import resumepdf from "../img/extra/Resume.pdf"
 
 
 class Aboutdrag extends React.Component {
@@ -25,6 +26,7 @@ class Aboutdrag extends React.Component {
             "experience": <Experience/>,
             "projects": <Projects/>,
             "skills": <Skills/>,
+            "resume": <Resume/>,
         }
 
         let lastVisitedScreen = localStorage.getItem("about-section");
@@ -63,6 +65,7 @@ class Aboutdrag extends React.Component {
                 <button id="experience" onFocus={this.changeScreen} className={(this.state.active_screen === "experience" ? " about-menu-text active" : " about-menu-text")}>Experience</button>
                 <button id="education" onFocus={this.changeScreen} className={(this.state.active_screen === "education" ? " about-menu-text active" : " about-menu-text")}>Education</button>
                 <button id="skills" onFocus={this.changeScreen} className={(this.state.active_screen === "skills" ? " about-menu-text active" : " about-menu-text")}>Skills</button>
+                <button id="resume" onFocus={this.changeScreen}/>
             </>
         );
     }
@@ -78,7 +81,7 @@ class Aboutdrag extends React.Component {
         return (
             <Draggable
                 handle=".taskbar-container"
-                defaultPosition={{x: 350, y: 100}}
+                defaultPosition={{x: 100, y: 50}}
                 position={null}
                 grid={[25, 25]}
                 scale={1}
@@ -120,6 +123,12 @@ ReactDOM.render(<Aboutdrag/>, document.getElementById('root'));
 export default Aboutdrag
 
 function About1() {
+    function resumebutton() {
+        document.getElementById('resume').focus();
+    }
+    function contactbutton() {
+        document.getElementById('contact').focus();
+    }
     return (
         <>
             <div id="about" className="h-100">
@@ -137,8 +146,8 @@ function About1() {
                                 work in a challenging environment to prove my coding skills and utilize my knowledge of
                                 various databases for the growth of the organization. </p>
                             <div className="d-flex button-con">
-                                <a href="https://drive.google.com/file/d/13SPSdqKGlmhv5r01ZREF9Xgn22hpPx2X/view?usp=sharing" target="_blank" className="about-buttons center">Resume</a>
-                                <button className="about-buttons center">Contact</button>
+                                <button onClick={resumebutton} className="about-buttons center">Resume</button>
+                                <a href="mailto:knariya7422@gmail.com" className="about-buttons center">Contact</a>
                             </div>
                         </div>
                     </div>
@@ -244,30 +253,36 @@ function Skills() {
                 <div className="w-80 m-auto mt-lg-3 d-flex">
                     <div className="col-lg-6 text-align-center">
                         <ul className="skill"><li><b>Language & Libraries</b></li></ul>
-                        <div className="d-flex flex-wrap justify-content-center items-start m-auto w-20">
-                            <img className="m-1" src="https://img.shields.io/badge/-JavaScript-%23F7DF1C?style=flat&logo=javascript&logoColor=000000&labelColor=%23F7DF1C&color=%23FFCE5A" alt="javascript" />
-                            <img className="m-1" src="https://img.shields.io/badge/C%2B%2B-00599C?style=flat&logo=c%2B%2B&logoColor=white" alt="c++" />
-                            <img className="m-1" src="https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=ffffff" alt="python" />
-                            <img className="m-1" src="https://img.shields.io/badge/Kotlin-0175C2?style=flat&logo=kotlin&logoColor=white" alt="kotlin" />
-                            <img className="m-1" src="https://img.shields.io/badge/-HTML5-%23E44D27?style=flat&logo=html5&logoColor=ffffff" alt="HTML" />
-                            <img src="https://img.shields.io/badge/Java-%23CC6699?style=flat&logo=java&logoColor=ffffff" alt="java" className="m-1" />
-                            <img src="https://img.shields.io/badge/jQuery-0769AD?style=flat&logo=jquery&logoColor=white" alt="jquery" className="m-1" />
+                        <div className="d-flex flex-wrap justify-content-center items-start m-auto w-70">
+                            <img className="m-1" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="javascript" />
+                            <img className="m-1" src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="c++" />
+                            <img className="m-1" src="https://img.shields.io/badge/Kotlin-0095D5?&style=for-the-badge&logo=kotlin&logoColor=white" alt="kotlin" />
+                            <img className="m-1" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML" />
+                            <img className="m-1" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="Css" />
+                            <img className="m-1" src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Css" />
+                            <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white" alt="java" className="m-1" />
+                            <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white" alt="jquery" className="m-1" />
                         </div>
                     </div>
                     <div className="col-lg-6 text-align-center">
                         <ul className="skill"><li><b>Framework & Tools</b></li></ul>
-                        <div className="d-flex flex-wrap justify-content-center items-start m-auto w-20">
-                            <img className=" m-1" src="https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=ffffff" alt="react" />
-                            <img className="m-1" src="https://img.shields.io/badge/Django-38B2AC?style=flat&logo=django-css&logoColor=white" alt="Django" />
-                            <img className="m-1" src="https://img.shields.io/badge/React Native-02569B?style=flat&logo=react&logoColor=white" alt="react native" />
-                            <img src="https://img.shields.io/badge/-Google Cloud-339933?style=flat&logo=google&logoColor=ffffff" alt="Cloud" className="m-1" />
-                            <img src="https://img.shields.io/badge/-Git-%23F05032?style=flat&logo=git&logoColor=%23ffffff" alt="git" className="m-1" />
-                            <img className="m-1" src="https://img.shields.io/badge/Figma-593D88?style=flat&logo=figma&logoColor=white" alt="Figma" />
-                            <img className="m-1" src="https://img.shields.io/badge/Adobe XD-593D88?style=flat&logo=adobe&logoColor=white" alt="XD" />
+                        <div className="d-flex flex-wrap justify-content-center items-start m-auto w-70">
+                            <img className=" m-1" src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=white" alt="react" />
+                            <img className="m-1" src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django" />
+                            <img className="m-1" src="https://img.shields.io/badge/React_Native-61DAFB?style=for-the-badge&logo=react&logoColor=white" alt="react native" />
+                            <img src="https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white" alt="Google Cloud" className="m-1" />
+                            <img src="https://img.shields.io/badge/Git-E84E31?style=for-the-badge&logo=git&logoColor=white" alt="git" className="m-1" />
+                            <img className="m-1" src="https://img.shields.io/badge/Figma-1E1829?style=for-the-badge&logo=figma&logoColor=9D56F7" alt="Figma" />
+                            <img className="m-1" src="https://img.shields.io/badge/Adobe_XD-450135?style=for-the-badge&logo=adobe-xd&logoColor=F75EEE" alt="XD" />
                         </div>
                     </div>
                 </div>
             </div>
         </>
+    )
+}
+function Resume() {
+    return (
+      <iframe className="w-100 h-100" src={resumepdf} frameBorder="0" />
     )
 }

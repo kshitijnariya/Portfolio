@@ -65,6 +65,9 @@ button {
 .w-80 {
   width: 80%;
 }
+.w-70 {
+  width: 70%;
+}
 .w-20 {
   width: 20%;
 }
@@ -78,7 +81,7 @@ button {
   margin: auto;
 }
 .mt-lg-3 {
-  margin-top: 25px;
+  margin-top: 30px;
 }
 .flex-wrap {
   flex-wrap: wrap
@@ -771,13 +774,18 @@ button {
 .about-buttons {
   padding: 2px 15px;
   background: #FFFFFF;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  border: 1px solid white;
+  box-shadow: 0 1px 3px lightslategrey;
   border-radius: 5px;
   font-family: "Poppins", sans-serif;
   font-weight: normal;
   font-size: 15px;
   line-height: 25px;
   color: rgba(0, 0, 0, 0.85);
+}
+.about-buttons:hover {
+  border-color: lightslategray;
+  box-shadow: none;
 }
 .active {
   color: #111111;
@@ -787,21 +795,36 @@ button {
   height: auto;
   padding: 10px;
   background: #FFFFFF;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.25);
+  border: 1px solid;
   border-radius: 8px;
   position: absolute;
+}
+.education-card-container:hover {
+  border: 1px solid white;
 }
 .education-card-container.pu {
   left: 7%;
   top: 10%;
+  border-color: lightcoral;
+}
+.education-card-container.pu:hover {
+  box-shadow: 0 1px 5px lightcoral;
 }
 .education-card-container.xii {
   right: 7%;
   top: 35%;
+  border-color: lightgreen;
+}
+.education-card-container.xii:hover {
+  box-shadow: 0 1px 5px lightgreen;
 }
 .education-card-container.x {
   left: 7%;
   top: 60%;
+  border-color: lightseagreen;
+}
+.education-card-container.x:hover {
+  box-shadow: 0 1px 5px lightseagreen;
 }
 .education-card-image {
   width: 80px;
@@ -825,7 +848,7 @@ button {
   flex-direction: column;
   justify-content: center;
   margin-left: 20px;
-  width: 65%;
+  width: 69%;
 }
 .card-title{
   font-family: 'Poppins', sans-serif;
@@ -858,19 +881,19 @@ button {
 }
 .education-divider {
   height: 87%;
-  border-right: 2px solid black;
+  border-right: 2px solid slategray;
   position: absolute;
   left: 50%;
   top: 5%;
 }
 .container-after {
-  width: 28px;
+  width: 29px;
   position: absolute;
-  border-top: 2px solid black;
+  border-top: 2px solid slategray;
 }
 .container-after.pu {
   top: 21%;
-  left: 47%;
+  left: 46.9%;
 }
 .container-after.jb1 {
   top: 46%;
@@ -878,7 +901,7 @@ button {
 }
 .container-after.jb2 {
   top: 71%;
-  left: 47%;
+  left: 46.9%;
 }
 .ullist {
   list-style: disc;
@@ -907,8 +930,12 @@ button {
   margin: 20px auto 10px auto;
   height: auto;
   background: #FFFFFF;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.25);
+  border: 1px solid lightgray;
   border-radius: 8px;
   padding: 20px;
+}
+.project-box:hover {
+  border: 1px solid white;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 }
 .skill li::before {content: "</>"; font-size: 20px; color: #db314b; margin-right: 10px}

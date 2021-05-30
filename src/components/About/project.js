@@ -1,13 +1,13 @@
 import React from "react";
 
-import { projectData } from "./projects";
+import { projectData } from "./projectdata";
 
 export const Project = () => {
   return (
     <>
         {projectData.map((data, key) => {
           return (
-              <div className="project-box">
+              <div className="project-box" style={{borderColor: data["border-color"]}}>
                 <a href={data.link} target="_blank">
                   <div className="d-flex">
                       <p className="card-title w-80">{data.name}</p>

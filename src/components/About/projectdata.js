@@ -5,6 +5,7 @@ export const projectData = [
             "date": "Present",
             "tools": "ReactJS, Django, Firebase, Rest APIs, CSS",
             "link": "https://github.com/kshitijnariya",
+            "border-color": "lightcoral",
             "description": [
                 {"des1" : "Provided Front-end Development"},
                 {"des2" : "Made Responsive Web & Provided Better"}
@@ -16,6 +17,7 @@ export const projectData = [
             "date": "Present",
             "tools": "Figma, Adobe XD, AI",
             "link": "https://dribbble.com/kshitijnariya",
+            "border-color": "lightgreen",
             "description": [
                 {"des1" : "Provided Front-end Development"},
                 {"des2" : "Made Responsive Web & Provided Better"}
@@ -27,6 +29,7 @@ export const projectData = [
             "date": "Dec '21",
             "tools": "Java, Eclipse",
             "link": "https://github.com.com/kshitijnariya/Basic-Chatting-App",
+            "border-color": "lightblue",
             "description": [
                 {"des1" : "Provided Front-end Development"},
                 {"des2" : "Made Responsive Web & Provided Better"}
@@ -38,6 +41,7 @@ export const projectData = [
             "date": "Nov '20",
             "tools": "Django, Python, HTML, CSS, Bootstrap",
             "link": "https://github.com.com/kshitijnariya/Text-Utils",
+            "border-color": "lightpink",
             "description": [
                 {"des1" : "Provided Front-end Development"},
                 {"des2" : "Made Responsive Web & Provided Better"}
@@ -49,6 +53,7 @@ export const projectData = [
             "date": "Aug '20",
             "tools": "Figma, Javascript, Bootstrap, HTML, CSS, Rest APIs",
             "link": "https://primierproducts.com",
+            "border-color": "lightseagreen",
             "description": [
                 {"des1" : "Provided Front-end Development"},
                 {"des2" : "Made Responsive Web & Provided Better"}
@@ -60,6 +65,7 @@ export const projectData = [
             "date": "Apr '21",
             "tools": "Figma, Javascript, HTML, CSS, Rest APIs",
             "link": "https://mekvahan.com",
+            "border-color": "orange",
             "description": [
                 {"des1" : "Provided Front-end Development"},
                 {"des2" : "Made Responsive Web & Provided Better"}
@@ -68,9 +74,10 @@ export const projectData = [
         {
             "id": 7,
             "name": "Basic Android Apps(Kotlin)",
-            "date": "Apr '21",
+            "date": "Feb '21",
             "tools": "Kotlin, Android Studio",
             "link": "https://github.com/kshitijnariya",
+            "border-color": "lightskyblue",
             "description": [
                 {"des1" : "Provided Front-end Development"},
                 {"des2" : "Made Responsive Web & Provided Better"}
@@ -82,6 +89,7 @@ export const projectData = [
             "date": "Mar '21",
             "tools": "Javascript, Bootstrap, HTML, CSS",
             "link": "https://uniquehygienecare.com",
+            "border-color": "lightsteelblue",
             "description": [
                 {"des1" : "Provided Front-end Development"},
                 {"des2" : "Made Responsive Web & Provided Better"}
@@ -93,6 +101,7 @@ export const projectData = [
             "date": "Apr '21",
             "tools": "Figma, Javascript, HTML, CSS, Rest APIs",
             "link": "https://www.mekpark.com",
+            "border-color": "lightsalmon",
             "description": [
                 {"des1" : "Provided Front-end Development"},
                 {"des2" : "Made Responsive Web & Provided Better"}
@@ -104,6 +113,7 @@ export const projectData = [
             "date": "May '21",
             "tools": "Figma, Javascript, HTML, CSS, Rest APIs",
             "link": "https://mekmeal.com",
+            "border-color": "lightslategrey",
             "description": [
                 {"des1" : "Provided Front-end Development"},
                 {"des2" : "Made Responsive Web & Provided Better"}
