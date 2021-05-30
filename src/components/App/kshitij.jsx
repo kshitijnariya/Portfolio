@@ -88,7 +88,7 @@ class Kshitij extends React.Component {
                 onStart={this.handleStart}
                 onDrag={this.handleDrag}
                 onStop={this.handleStop}>
-                <div className="about-container">
+                <div onClick={zindex} className="about-container">
                     <div className="taskbar-container">
                         <div className="close-bar">
                             <button onClick={close} className="close-button closebar-button">
@@ -121,13 +121,13 @@ class Kshitij extends React.Component {
 }
 ReactDOM.render(<Kshitij/>, document.getElementById('root'));
 export default Kshitij
-
+function zindex() {
+    document.querySelector(".safari-container").style.zIndex = "10";
+    document.querySelector(".about-container").style.zIndex = "11";
+}
 function About1() {
     function resumebutton() {
         document.getElementById('resume').focus();
-    }
-    function contactbutton() {
-        document.getElementById('contact').focus();
     }
     return (
         <>

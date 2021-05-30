@@ -95,7 +95,7 @@ export class Safari extends Component {
                 onStart={this.handleStart}
                 onDrag={this.handleDrag}
                 onStop={this.handleStop}>
-                <div className="safari-container">
+                <div onClick={zindex} className="safari-container">
                     {this.displayUrlBar()}
                     <div id="aboutmain" className="w-100 h-100 mt-lg-3">
                         <iframe src={this.state.url} className="w-100 h-100" id="safari-screen" frameBorder="0" title="Ubuntu Safari Url"/>
@@ -104,6 +104,10 @@ export class Safari extends Component {
             </Draggable>
         )
     }
+}
+function zindex() {
+    document.querySelector(".safari-container").style.zIndex = "11";
+    document.querySelector(".about-container").style.zIndex = "10";
 }
 function close() {
     const safaricon = document.querySelector('.safari-container');
