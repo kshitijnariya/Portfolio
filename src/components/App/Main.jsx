@@ -1,8 +1,16 @@
 import React from 'react';
+import Clock from "../other/clock";
 
-function Navbar() {
+function Main() {
     function aboutkshitij() {
         document.querySelector('.about-container').style.display = "block";
+        document.querySelector(".about-container").style.zIndex = "11";
+        document.querySelector(".safari-container").style.zIndex = "10";
+    }
+    function safari() {
+        document.querySelector('.safari-container').style.display = "block";
+        document.querySelector(".safari-container").style.zIndex = "11";
+        document.querySelector(".about-container").style.zIndex = "10";
     }
     return (
         <>
@@ -121,17 +129,16 @@ function Navbar() {
                             <div className="inner-con switch-container2"/>
                         </div>
                     </button>
-                    <p className="time">Tue Apr 27  9:41 AM</p>
+                    <p className="time"><Clock /></p>
                 </div>
             </div>
             <div className="screen-container">
                 <div className="app-column">
-
                     <button onDoubleClick={aboutkshitij} className="app-img-txt-con">
                         <div className="app-img user-img center-img" />
                         <p className="app-txt">About Kshitij</p>
                     </button>
-                    <button className="app-img-txt-con">
+                    <button onDoubleClick={safari} className="app-img-txt-con">
                         <div className="app-img safari-img center-img" />
                         <p className="app-txt">Safari</p>
                     </button>
@@ -144,26 +151,15 @@ function Navbar() {
                         <p className="app-txt">Send Mail</p>
                     </button>
                 </div>
-                <div className="app-column">
-                    <button className="app-img-txt-con">
-                        <div className="app-img linkedin-img center-img" />
-                        <p className="app-txt">LinkedIn</p>
-                    </button>
-                    <button className="app-img-txt-con">
-                        <div className="app-img github-img center-img" />
-                        <p className="app-txt">Github</p>
-                    </button>
-                </div>
             </div>
             <div className="bt-con">
                 <div className="bottom-container">
                     <div className="bt-inner-con">
                         <button className="app-img finder-img"/>
-                        <div className="app-img safari-img"/>
+                        <div onClick={safari} className="app-img safari-img"/>
                         <div className="section-border"/>
                         <button onClick={aboutkshitij} className="app-img user-img"/>
                         <div className="app-img linkedin-img"/>
-                        <div className="app-img github-img"/>
                         <div className="app-img message-img"/>
                         <div className="app-img mail-img"/>
                         <div className="app-img map-img"/>
@@ -180,4 +176,4 @@ function Navbar() {
     )
 }
 
-export default Navbar
+export default Main

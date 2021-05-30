@@ -1,7 +1,9 @@
+import React from "react";
+
 export const projectData = [
         {
             "id": 1,
-            "name": "Shopkeeper - Final Year Project",
+            "name": "Shopkeeper - Final Year Projectdata",
             "date": "Present",
             "tools": "ReactJS, Django, Firebase, Rest APIs, CSS",
             "link": "https://github.com/kshitijnariya",
@@ -121,3 +123,27 @@ export const projectData = [
         },
 
 ]
+
+export const Projectdata = () => {
+  return (
+    <>
+        {projectData.map((data, key) => {
+          return (
+              <div className="project-box" style={{borderColor: data["border-color"]}}>
+                <a href={data.link} target="_blank">
+                  <div className="d-flex">
+                      <p className="card-title w-80">{data.name}</p>
+                      <p className="card-title w-20 text-align-right">{data.date}</p>
+                  </div>
+                  <p className="card-position">{data.tools}</p>
+                  <ul className="card-extra ullist">
+                    <li style={{lineHeight: '1'}}>{data.description[0].des1}</li>
+                    <li style={{lineHeight: '1'}}>{data.description[1].des2}</li>
+                  </ul>
+                </a>
+              </div>
+          );
+        })}
+    </>
+  );
+}

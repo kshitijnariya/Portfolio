@@ -2,11 +2,11 @@ import React from 'react';
 import Draggable from "react-draggable";
 import ReactDOM from "react-dom";
 import * as ReactGA from "react-ga";
-import { Project } from "./project";
+import { Projectdata } from "../other/projectdata";
 import resumepdf from "../img/extra/Resume.pdf"
 
 
-class Aboutdrag extends React.Component {
+class Kshitij extends React.Component {
 
     constructor() {
         super();
@@ -119,8 +119,8 @@ class Aboutdrag extends React.Component {
     }
 
 }
-ReactDOM.render(<Aboutdrag/>, document.getElementById('root'));
-export default Aboutdrag
+ReactDOM.render(<Kshitij/>, document.getElementById('root'));
+export default Kshitij
 
 function About1() {
     function resumebutton() {
@@ -236,7 +236,7 @@ function Projects() {
         <>
             <div id="projects" className="h-100">
                 <div className="project-container">
-                    <Project />
+                    <Projectdata />
                 </div>
             </div>
         </>
@@ -259,7 +259,7 @@ function Skills() {
                             <img className="m-1" src="https://img.shields.io/badge/Kotlin-0095D5?&style=for-the-badge&logo=kotlin&logoColor=white" alt="kotlin" />
                             <img className="m-1" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML" />
                             <img className="m-1" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="Css" />
-                            <img className="m-1" src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Css" />
+                            <img className="m-1" src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap" />
                             <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white" alt="java" className="m-1" />
                             <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white" alt="jquery" className="m-1" />
                         </div>

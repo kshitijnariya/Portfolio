@@ -1,11 +1,15 @@
 import React from 'react';
-import Aboutdrag from '../components/About/aboutdrag';
+import Kshitij from './App/kshitij';
+import Safari from "./App/safari";
 
 
 function About() {
 
     return (
-        <Aboutdrag/>
+        <>
+            <Kshitij/>
+            <Safari/>
+        </>
     );
 }
 

@@ -90,7 +90,7 @@ button {
   color: #3481c8;
 }
 
-/*-- Navbar --*/
+/*-- Main --*/
 .nav-panel {
   position: fixed;
   width: 100%;
@@ -611,7 +611,7 @@ button {
   border: 1px solid rgba(0, 0, 0, 0.3);
 }
 /*----------------------------------------------------
-                 About Kshitij
+                 App Kshitij
 ------------------------------------------------------*/
 .about-container {
   display: none;
@@ -939,3 +939,28 @@ button {
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 }
 .skill li::before {content: "</>"; font-size: 20px; color: #db314b; margin-right: 10px}
+
+/*******************************
+          Safari
+******************************** */
+.safari-container, .github-container {
+  display: none;
+  width: 876px;
+  height: 500px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  z-index: 3;
+  position: absolute;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.safari-url-bar  {
+  width: 40%;
+  height: 20px;
+  background-color: #f0f0f0;
+  border-radius: 3px;
+  border: 1px solid #d4d4d4;
+  text-align: center;
+  padding: 0 10px;
+  font-family: "Poppins", sans-serif;
+  outline: none;
+}
