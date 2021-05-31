@@ -964,3 +964,31 @@ button {
   font-family: "Poppins", sans-serif;
   outline: none;
 }
+.backaero {
+  position: absolute;
+  left: 15%;
+  cursor: pointer;
+}
+.forwardaero {
+  position: absolute;
+  left: 17%;
+}
+.shieldaero {
+  position: absolute;
+  left: 27%;
+  width: 12px;
+}
+.refreshaero {
+  position: absolute;
+  right: 31%;
+  z-index: 11;
+  cursor: pointer;
+}
+.plusaero {
+  position: absolute;
+  right: 5%;
+}
+.copyaero {
+  position: absolute;
+  right: 2%;
+}

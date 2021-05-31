@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import Draggable from "react-draggable";
+import back from "../img/extra/leftaero.svg"
+import forward from "../img/extra/rightaero.svg"
+import shield from "../img/extra/shield.svg"
+import refresh from "../img/extra/refresh.svg"
+import plus from "../img/extra/plus.svg"
+import copy from "../img/extra/copy.svg"
 
 export class Safari extends Component {
     constructor() {
@@ -20,7 +26,7 @@ export class Safari extends Component {
     }
 
     storeVisitedUrl = (url, display_url) => {
-        localStorage.setItem("safari-url", url);
+        localStorage.setItem(url, "safari-url");
         localStorage.setItem("safari-display-url", display_url);
     }
 
@@ -29,7 +35,7 @@ export class Safari extends Component {
     }
 
     goToHome = () => {
-        this.setState({ url: this.home_url, display_url: "https://www.google.com" });
+        this.setState({ url: this.home_url, display_url: "www.google.com" });
         this.refreshSafari();
     }
 
@@ -49,7 +55,7 @@ export class Safari extends Component {
             display_url = url;
             if (url.includes("google.com")) { // 😅
                 url = 'https://www.google.com/webhp?igu=1';
-                display_url = "https://www.google.com";
+                display_url = "www.google.com";
             }
             this.setState({ url, display_url: url });
             this.storeVisitedUrl(url, display_url);
@@ -77,8 +83,13 @@ export class Safari extends Component {
                     </button>
                 </div>
                 <div className="about-menu-container d-flex">
-
+                    <img onClick={this.goToHome} className="backaero" src={back} alt=""/>
+                    <img className="forwardaero" src={forward} alt=""/>
+                    <img className="shieldaero" src={shield} alt=""/>
                     <input onKeyDown={this.checkKey} onChange={this.handleDisplayUrl} value={this.state.display_url} id="safari-url-bar" className="safari-url-bar" type="url" spellCheck={false} autoComplete="off" />
+                    <img onClick={this.refreshSafari} className="refreshaero" src={refresh} alt=""/>
+                    <img className="plusaero" src={plus} alt=""/>
+                    <img className="copyaero" src={copy} alt=""/>
                 </div>
             </div>
         );
