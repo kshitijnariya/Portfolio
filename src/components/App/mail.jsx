@@ -1,20 +1,11 @@
 import React, { Component } from 'react';
+import Draggable from "react-draggable";
 import $ from 'jquery';
+import send from '../img/extra/send.svg';
 import ReactGA from 'react-ga';
 import emailjs from 'emailjs-com';
 
-export class Gedit extends Component {
-
-    constructor() {
-        super();
-        this.state = {
-            sending: false,
-        }
-    }
-
-    componentDidMount() {
-        emailjs.init(process.env.REACT_APP_USER_ID);
-    }
+export class Kmail extends Component {
 
     sendMessage = async () => {
         let name = $("#sender-name").val();
@@ -42,21 +33,21 @@ export class Gedit extends Component {
 
         this.setState({ sending: true });
 
-        const serviceID = process.env.REACT_APP_SERVICE_ID;
-        const templateID = process.env.REACT_APP_TEMPLATE_ID;
+        const serviceID = "default_service";
+        const templateID = "template_n7qe36x";
         const templateParams = {
             'name': name,
             'subject': subject,
             'message': message,
         }
 
-        emailjs.send(serviceID, templateID, templateParams).then(() => {
-            this.setState({ sending: false });
-            $("#close-gedit").trigger("click");
-        }).catch(() => {
-            this.setState({ sending: false });
-            $("#close-gedit").trigger("click");
-        })
+        emailjs.send(serviceID, templateID, templateParams, 'user_NcpQ9wLb9uAc1m13MoI2X')
+            .then((response) => {
+               console.log('SUCCESS!', response.status, response.text);
+            }, (err) => {
+               console.log('FAILED...', err);
+            });
+
 
         ReactGA.event({
             category: "Send Message",
@@ -64,47 +55,66 @@ export class Gedit extends Component {
         });
 
     }
-
     render() {
         return (
-            <div className="w-full h-full relative flex flex-col bg-ub-cool-grey text-white select-none">
-                <div className="flex items-center justify-between w-full bg-ub-gedit-light bg-opacity-60 border-b border-t border-blue-400 text-sm">
-                    <span className="font-bold ml-2">Send a Message to Me</span>
-                    <div className="flex">
-                        <div onClick={this.sendMessage} className="border border-black bg-black bg-opacity-50 px-3 py-0.5 my-1 mx-1 rounded hover:bg-opacity-80">Send</div>
-                    </div>
-                </div>
-                <div className="relative flex-grow flex flex-col bg-ub-gedit-dark font-normal windowMainScreen">
-                    <div className="absolute left-0 top-0 h-full px-2 bg-ub-gedit-darker"></div>
-                    <div className="relative">
-                        <input id="sender-name" className=" w-full text-ubt-gedit-orange focus:bg-ub-gedit-light outline-none font-medium text-sm pl-6 py-0.5 bg-transparent" placeholder="Your Email / Name :" spellCheck="false" autoComplete="off" type="text" />
-                        <span className="absolute left-1 top-1/2 transform -translate-y-1/2 font-bold light text-sm text-ubt-gedit-blue">1</span>
-                    </div>
-                    <div className="relative">
-                        <input id="sender-subject" className=" w-full my-1 text-ubt-gedit-blue focus:bg-ub-gedit-light gedit-subject outline-none text-sm font-normal pl-6 py-0.5 bg-transparent" placeholder="subject (may be a feedback for this website!)" spellCheck="false" autoComplete="off" type="text" />
-                        <span className="absolute left-1 top-1/2 transform -translate-y-1/2 font-bold  text-sm text-ubt-gedit-blue">2</span>
-                    </div>
-                    <div className="relative flex-grow">
-                        <textarea id="sender-message" className=" w-full gedit-message font-light text-sm resize-none h-full windowMainScreen outline-none tracking-wider pl-6 py-1 bg-transparent" placeholder="Message" spellCheck="false" autoComplete="none" type="text" />
-                        <span className="absolute left-1 top-1 font-bold  text-sm text-ubt-gedit-blue">3</span>
-                    </div>
-                </div>
-                {
-                    (this.state.sending
-                        ?
-                        <div className="flex justify-center items-center animate-pulse h-full w-full bg-gray-400 bg-opacity-30 absolute top-0 left-0">
-                            <img className={" w-8 absolute animate-spin"} src="./themes/Yaru/status/process-working-symbolic.svg" alt="Ubuntu Process Symbol" />
+            <Draggable
+                handle=".taskbar-container"
+                defaultPosition={{x: 100, y: 50}}
+                position={null}
+                grid={[25, 25]}
+                scale={1}
+                onStart={this.handleStart}
+                onDrag={this.handleDrag}
+                onStop={this.handleStop}>
+                <div className="kmail-container">
+                    <div className="taskbar-container">
+                        <div className="close-bar">
+                            <button onClick={close} className="close-button closebar-button">
+                                <div className="close-svg"/>
+                            </button>
+                            <button className="minimize-button closebar-button">
+                                <div className="minimize-svg"/>
+                            </button>
+                            <button className="maxmize-button closebar-button" disabled>
+                                <div className="maximize-svg"/>
+                            </button>
                         </div>
-                        : null
-                    )
-                }
-            </div>
+                        <div className="about-menu-container">
+                            <div onClick={this.sendMessage} className="sendbutton center">
+                                <img src={send}/>
+                                <p>Send</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="about-main-container">
+                        <div className="to-container">
+                            <p>To : <span>contact@kshitijnariya.com</span></p>
+                            <p className="bnone">Subject : <input id="sender-subject" type="text" placeholder="Write subject..."/></p>
+                        </div>
+                        <div className="to-container">
+                            <p className={"bnone"}>From : <input id="sender-name" type="email" placeholder="abc@gmail.com"/></p>
+                        </div>
+                        <div className="to-container">
+                            <p className="bnone"><textarea id="sender-message" placeholder="Type Message Here..."/></p>
+                        </div>
+                    </div>
+                    <div className="copyright-container">
+                        <p className="copyright">
+                            © 2020 HorizonLight. All Rights Reserved.
+                        </p>
+                    </div>
+                </div>
+            </Draggable>
         )
     }
 }
+function close() {
+    const safaricon = document.querySelector('.safari-container');
+    safaricon.style.display = "none";
+}
 
-export default Gedit;
+ export default Kmail;
 
-export const displayGedit = () => {
-    return <Gedit> </Gedit>;
+export const displayKmail = () => {
+    return <Kmail> </Kmail>;
 }

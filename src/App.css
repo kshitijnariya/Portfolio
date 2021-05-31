@@ -943,7 +943,7 @@ button {
 /*******************************
           Safari
 ******************************** */
-.safari-container, .github-container {
+.safari-container, .kmail-container {
   display: none;
   width: 876px;
   height: 500px;
@@ -991,4 +991,73 @@ button {
 .copyaero {
   position: absolute;
   right: 2%;
+}
+
+/*--------------------------------
+              Mail
+---------------------------------- */
+.kmail-container {
+  display: none;
+  width: 876px;
+  height: 600px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  z-index: 3;
+  position: absolute;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.sendbutton {
+  width: auto;
+  height: 20px;
+  padding: 5px 10px;
+  background-color: lightblue;
+  border: 1px solid skyblue;
+  margin: 0 5% 0 auto;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.sendbutton p {
+  font-family: "Poppins", sans-serif;
+  color: steelblue;
+  font-size: 12px;
+  margin-left: 7px;
+}
+.to-container {
+  width: 100%;
+  height: auto;
+  border-bottom: 2px solid #f0f0f0;
+}
+.to-container p {
+  width: 97%;
+  padding: 7px 7px 7px 0;
+  margin: 0 0 0 25px;
+  border-bottom: 2px solid #f0f0f0;
+  color: #808080;
+}
+.to-container span {
+  color: steelblue;
+}
+.to-container .bnone {
+  border: none;
+}
+.to-container input {
+  width: 90%;
+  outline: none;
+  border: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  color: navy;
+}
+.to-container input::placeholder, .to-container textarea::placeholder {
+  color: lightslategrey;
+}
+.to-container textarea {
+  width: 97%;
+  height: 395px;
+  border: none;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  color: black;
+  resize: none;
 }

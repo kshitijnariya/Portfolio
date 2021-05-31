@@ -12,6 +12,9 @@ function Main() {
         document.querySelector(".safari-container").style.zIndex = "11";
         document.querySelector(".about-container").style.zIndex = "10";
     }
+    function kmail() {
+        document.querySelector('.kmail-container').style.display = "block";
+    }
     return (
         <>
 
@@ -146,7 +149,7 @@ function Main() {
                         <div className="app-img message-img center-img" />
                         <p className="app-txt">Send Message</p>
                     </button>
-                    <button className="app-img-txt-con">
+                    <button onDoubleClick={kmail} className="app-img-txt-con">
                         <div className="app-img mail-img center-img" />
                         <p className="app-txt">Send Mail</p>
                     </button>
@@ -161,7 +164,7 @@ function Main() {
                         <button onClick={aboutkshitij} className="app-img user-img"/>
                         <div className="app-img linkedin-img"/>
                         <div className="app-img message-img"/>
-                        <div className="app-img mail-img"/>
+                        <div onClick={kmail} className="app-img mail-img"/>
                         <div className="app-img map-img"/>
                         <div className="section-border"/>
                         <div className="app-img appstore-img"/>
