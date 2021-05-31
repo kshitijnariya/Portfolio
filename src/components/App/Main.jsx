@@ -1,7 +1,10 @@
 import React from 'react';
 import Clock from "../other/clock";
+import alert from './mail'
+
 
 function Main() {
+
     function aboutkshitij() {
         document.querySelector('.about-container').style.display = "block";
         document.querySelector(".about-container").style.zIndex = "11";
@@ -15,9 +18,11 @@ function Main() {
     function kmail() {
         document.querySelector('.kmail-container').style.display = "block";
     }
+
+
+
     return (
         <>
-
             <div id='nav' className="nav-panel"/>
             <div className="nav-container">
                 <div className="apple">
@@ -174,7 +179,7 @@ function Main() {
                     </div>
                 </div>
             </div>
-
+            <div id="extra"/>
         </>
     )
 }

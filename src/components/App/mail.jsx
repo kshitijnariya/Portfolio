@@ -4,6 +4,8 @@ import $ from 'jquery';
 import send from '../img/extra/send.svg';
 import ReactGA from 'react-ga';
 import emailjs from 'emailjs-com';
+import ReactDOM from "react-dom";
+import App from "../../App";
 
 export class Kmail extends Component {
 
@@ -29,6 +31,21 @@ export class Kmail extends Component {
             $("#sender-message").attr("placeholder", "Message must not be Empty!");
             error = true;
         }
+        const regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if(!regex.test(name)) {
+            $('#extra').show(0);
+            ReactDOM.render(
+                <>
+                     <Alert />
+                </>,
+                document.getElementById('extra')
+
+        )
+            $('#extra').delay(2000).hide(0);
+        }else {
+            console.log('kshitij');
+        }
+
         if (error) return;
 
         this.setState({ sending: true });
@@ -43,8 +60,16 @@ export class Kmail extends Component {
 
         emailjs.send(serviceID, templateID, templateParams, 'user_NcpQ9wLb9uAc1m13MoI2X')
             .then((response) => {
-               console.log('SUCCESS!', response.status, response.text);
-            }, (err) => {
+                $('#extra').show(0);
+                ReactDOM.render(
+                    <>
+                        <Success />
+                    </>,
+                document.getElementById('extra')
+                )
+                $('#extra').delay(2000).hide(0);
+            },
+            (err) => {
                console.log('FAILED...', err);
             });
 
@@ -57,6 +82,7 @@ export class Kmail extends Component {
     }
     render() {
         return (
+
             <Draggable
                 handle=".taskbar-container"
                 defaultPosition={{x: 100, y: 50}}
@@ -112,8 +138,21 @@ function close() {
     const safaricon = document.querySelector('.safari-container');
     safaricon.style.display = "none";
 }
-
- export default Kmail;
+function Alert() {
+    return (
+        <div id="alert" className="alert">
+            Invalid email! Please enter valid email.
+        </div>
+    )
+}
+function Success() {
+    return (
+        <div className="alert success">
+            <strong>Your Message has been sent!</strong>
+        </div>
+    )
+}
+export default Kmail;
 
 export const displayKmail = () => {
     return <Kmail> </Kmail>;
