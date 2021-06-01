@@ -3,7 +3,7 @@ import Draggable from "react-draggable";
 import ReactDOM from "react-dom";
 import * as ReactGA from "react-ga";
 import { Projectdata } from "../other/projectdata";
-import resumepdf from "../img/extra/Resume.pdf"
+import resumepdf from "../img/extra/Resume.pdf";
 
 
 class Kshitij extends React.Component {
@@ -121,6 +121,7 @@ class Kshitij extends React.Component {
 }
 ReactDOM.render(<Kshitij/>, document.getElementById('root'));
 export default Kshitij
+
 function zindex() {
     document.querySelector(".safari-container").style.zIndex = "10";
     document.querySelector(".kmail-container").style.zIndex = "10";
@@ -129,6 +130,10 @@ function zindex() {
 function About1() {
     function resumebutton() {
         document.getElementById('resume').focus();
+    }
+    function kmai() {
+        document.getElementById('kmail').click();
+        document.querySelector(".about-container").style.display = "none";
     }
     return (
         <>
@@ -148,7 +153,7 @@ function About1() {
                                 various databases for the growth of the organization. </p>
                             <div className="d-flex button-con">
                                 <button onClick={resumebutton} className="about-buttons center">Resume</button>
-                                <a href="mailto:knariya7422@gmail.com" className="about-buttons center">Contact</a>
+                                <button onClick={kmai} className="about-buttons center">Contact</button>
                             </div>
                         </div>
                     </div>

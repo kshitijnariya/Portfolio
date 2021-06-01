@@ -173,7 +173,7 @@ function Main() {
                         <button onClick={aboutkshitij} className="app-img user-img"/>
                         <div className="app-img linkedin-img"/>
                         <div className="app-img message-img"/>
-                        <div onClick={kmail} className="app-img mail-img"/>
+                        <div onClick={kmail} id='kmail' className="app-img mail-img"/>
                         <div className="app-img map-img"/>
                         <div className="section-border"/>
                         <div className="app-img appstore-img"/>
