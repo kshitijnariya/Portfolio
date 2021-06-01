@@ -99,7 +99,7 @@ export class Safari extends Component {
         return (
             <Draggable
                 handle=".taskbar-container"
-                defaultPosition={{x: 200, y: 150}}
+                defaultPosition={{x: 200, y: 100}}
                 position={null}
                 grid={[25, 25]}
                 scale={1}
@@ -109,7 +109,7 @@ export class Safari extends Component {
                 <div onClick={zindex} className="safari-container">
                     {this.displayUrlBar()}
                     <div id="aboutmain" className="w-100 h-100 mt-lg-3">
-                        <iframe src={this.state.url} className="w-100 h-100" id="safari-screen" frameBorder="0" title="Ubuntu Safari Url"/>
+                        <iframe src={this.state.url} style={{borderRadius: '10px'}} className="w-100 h-100" id="safari-screen" frameBorder="0" title="Ubuntu Safari Url"/>
                     </div>
                 </div>
             </Draggable>
@@ -119,6 +119,7 @@ export class Safari extends Component {
 function zindex() {
     document.querySelector(".safari-container").style.zIndex = "11";
     document.querySelector(".about-container").style.zIndex = "10";
+    document.querySelector(".kmail-container").style.zIndex = "10";
 }
 function close() {
     const safaricon = document.querySelector('.safari-container');

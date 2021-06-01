@@ -1,6 +1,5 @@
 import React from 'react';
 import Clock from "../other/clock";
-import alert from './mail'
 
 
 function Main() {
@@ -9,14 +8,19 @@ function Main() {
         document.querySelector('.about-container').style.display = "block";
         document.querySelector(".about-container").style.zIndex = "11";
         document.querySelector(".safari-container").style.zIndex = "10";
+        document.querySelector(".kmail-container").style.zIndex = "10";
     }
     function safari() {
         document.querySelector('.safari-container').style.display = "block";
         document.querySelector(".safari-container").style.zIndex = "11";
         document.querySelector(".about-container").style.zIndex = "10";
+        document.querySelector(".kmail-container").style.zIndex = "10";
     }
     function kmail() {
         document.querySelector('.kmail-container').style.display = "block";
+        document.querySelector(".safari-container").style.zIndex = "10";
+        document.querySelector(".about-container").style.zIndex = "10";
+        document.querySelector(".kmail-container").style.zIndex = "11";
     }
 
 

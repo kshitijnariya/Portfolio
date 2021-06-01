@@ -5,7 +5,6 @@ import send from '../img/extra/send.svg';
 import ReactGA from 'react-ga';
 import emailjs from 'emailjs-com';
 import ReactDOM from "react-dom";
-import App from "../../App";
 
 export class Kmail extends Component {
 
@@ -21,13 +20,11 @@ export class Kmail extends Component {
         let error = false;
 
         if (name.length === 0) {
-            $("#sender-name").val('');
             $("#sender-name").attr("placeholder", "Name must not be Empty!");
             error = true;
         }
 
         if (message.length === 0) {
-            $("#sender-message").val('');
             $("#sender-message").attr("placeholder", "Message must not be Empty!");
             error = true;
         }
@@ -36,14 +33,12 @@ export class Kmail extends Component {
             $('#extra').show(0);
             ReactDOM.render(
                 <>
-                     <Alert />
+                    <Alert/>
                 </>,
                 document.getElementById('extra')
-
-        )
+            )
             $('#extra').delay(2000).hide(0);
-        }else {
-            console.log('kshitij');
+            error = true;
         }
 
         if (error) return;
@@ -85,14 +80,14 @@ export class Kmail extends Component {
 
             <Draggable
                 handle=".taskbar-container"
-                defaultPosition={{x: 100, y: 50}}
+                defaultPosition={{x: 300, y: 150}}
                 position={null}
                 grid={[25, 25]}
                 scale={1}
                 onStart={this.handleStart}
                 onDrag={this.handleDrag}
                 onStop={this.handleStop}>
-                <div className="kmail-container">
+                <div onClick={zindex} className="kmail-container">
                     <div className="taskbar-container">
                         <div className="close-bar">
                             <button onClick={close} className="close-button closebar-button">
@@ -107,7 +102,7 @@ export class Kmail extends Component {
                         </div>
                         <div className="about-menu-container">
                             <div onClick={this.sendMessage} className="sendbutton center">
-                                <img src={send}/>
+                                <img src={send} alt=""/>
                                 <p>Send</p>
                             </div>
                         </div>
@@ -134,9 +129,14 @@ export class Kmail extends Component {
         )
     }
 }
+function zindex() {
+    document.querySelector(".safari-container").style.zIndex = "10";
+    document.querySelector(".about-container").style.zIndex = "10";
+    document.querySelector(".kmail-container").style.zIndex = "11";
+}
 function close() {
-    const safaricon = document.querySelector('.safari-container');
-    safaricon.style.display = "none";
+    const kmailcon = document.querySelector('.kmail-container');
+    kmailcon.style.display = "none";
 }
 function Alert() {
     return (

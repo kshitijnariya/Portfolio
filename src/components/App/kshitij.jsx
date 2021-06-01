@@ -123,6 +123,7 @@ ReactDOM.render(<Kshitij/>, document.getElementById('root'));
 export default Kshitij
 function zindex() {
     document.querySelector(".safari-container").style.zIndex = "10";
+    document.querySelector(".kmail-container").style.zIndex = "10";
     document.querySelector(".about-container").style.zIndex = "11";
 }
 function About1() {
