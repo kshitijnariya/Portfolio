@@ -10,6 +10,13 @@ body {
   background: url("./img/main/main-wallpaper.jpg") fixed center;
   background-size: cover;
 }
+@media (max-width: 768px) {
+  body {
+    background: url("./img/main/main-wallpaper-mobile.jpg") fixed center;
+    background-size: cover;
+  }
+}
+
 *{
   box-sizing: border-box;
 }
